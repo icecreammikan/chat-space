@@ -30,7 +30,7 @@ Things you may want to cover:
 |password|string|null: false|
 |name|string|null: false|
 ### Association
-- has_many :groups  through  :user_group
+- has_many :groups  through  :user_groups
 - has_many :messages
 - has_many :users_groups
 
@@ -50,8 +50,8 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has_many :massages
-- has_many :users,  through:  :user_group
+- has_many :messages
+- has_many :users,  through:  :user_groups
 - has_many :users_groups
 
 ## users_groupsテーブル
