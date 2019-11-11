@@ -1,0 +1,32 @@
+.chat-main
+  .main_header
+    .main_header__left-box
+      .main_header__left-box__current-group
+        aaa
+      .main_header__left-box__member-list
+    .edit-btn
+      = link_to 'path' do
+        Edit
+  .messages
+    .message
+      .message__upper-info
+        %aaa
+      .message__text
+        aaa
+  .form
+    .new_message
+      .input-box
+        -# = form_for [] do |f|
+        -#   = f.text_field :text
+        -#   =f.label :image, class
+        -#   = f.file_field 
+
+        .input-box__text
+          %input{placeholder: "type a message"}
+        .input-box__image
+          %label{class: "input-box__image"}
+            %i.fa.fa-image
+            %input{type: "file"} 
+      .send-btn
+        = link_to 'path' do
+          Send
