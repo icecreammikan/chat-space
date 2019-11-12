@@ -30,9 +30,9 @@ Things you may want to cover:
 |password|string|null: false|
 |name|string|null: false|
 ### Association
-- has_many :groups  through  :user_groups
+- has_many :groups  through  :users_group
 - has_many :messages
-- has_many :users_groups
+- has_many :users_group
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -51,10 +51,10 @@ Things you may want to cover:
 |name|string|null: false|
 ### Association
 - has_many :messages
-- has_many :users,  through:  :user_groups
-- has_many :users_groups
+- has_many :users,  through:  :users_group
+- has_many :users_group
 
-## users_groupsテーブル
+## users_groupテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
