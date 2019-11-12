@@ -1,28 +1,41 @@
 .chat-main
   .main_header
     .main_header__left-box
-      .main_header__left-box__current-group
-        aaa
-      .main_header__left-box__member-list
+      .main_header__left-box__current-group 
+        = @group.name
+      .main_header__left-box__member-list 
+        - @users.each do |user|
+          %span=user.name
     .edit-btn
-      = link_to 'path' do
+      = link_to edit_group_path(@group) do
         Edit
+
   .messages
-    .message
-      .message__upper-info
-        %aaa
-      .message__text
-        aaa
+    = render @messages
+  
+
   .form
-    .new_message
-      .input-box
-       
-        .input-box__text
-          %input{placeholder: "type a message"}
-        .input-box__image
-          %label{class: "input-box__image"}
-            %i.fa.fa-image
-            %input{type: "file"} 
+    = form_for [@group, @message] do |f|
+      .input-box__text
+        = f.text_field :text, placeholder: 'type a message'
+      .input-box__image
+        = f.label :image, class:'icon' do
+          = icon('fas', 'image', class: 'image-icon')
+          = f.file_field :image, class: 'hidden'
       .send-btn
-        = link_to 'path' do
-          Send
+        = f.submit 'Send', class: 'form__submit', id:'form_send'
+        -# = f.submit 'Send'
+  -# .form
+  -#   .new_message
+
+  -#     .input-box
+
+  -#       .input-box__text
+  -#         %input{placeholder: "type a message"}
+  -#       .input-box__image
+  -#         %label{class: "input-box__image"}
+  -#           %i.fa.fa-image
+  -#           %input{type: "file"} 
+  -#     .send-btn
+  -#       = link_to 'path' do
+  -#         Send
