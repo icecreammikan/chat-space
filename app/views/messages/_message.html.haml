@@ -1,8 +1,9 @@
-  .message
-      .message__upper-info
-        = message.user.name
-      .message__text
-        - if message.text.present?
-          %p.lower-message__text
-            = message.text
-        = image_tag message.image.url, if message.image.present?
+.message
+  .message__upper-info
+    = message.user.name
+  .message__text
+    - if message.text.present?
+      %p.lower-message__text
+        = message.text
+    - if message.image.present?
+      = image_tag message.image.url
