@@ -41,7 +41,7 @@ $(function(){
 
     })
 
-
+    
       var reloadMessages = function() {
         var last_message_id = $(".message:last").data("message-id");
         $.ajax({
@@ -51,7 +51,6 @@ $(function(){
           data: {id: last_message_id},
         })
         .done(function(messages) {
-          console.log(messages);
           if('messages'.length > 0 ){
           var insertHTML = '';
           messages.forEach(function (message){
@@ -65,5 +64,6 @@ $(function(){
           alert('自動更新に失敗しました');
         });
       };
-    setInterval(reloadMessages, 7000);
+    if(location.href.match(/\/groups\/\d+\/messages/)){
+    setInterval(reloadMessages, 7000);}
 });
