@@ -15,7 +15,7 @@ $(function(){
     $("#user-search-result").append(html);
   }
   function addDeleteUser(name, id) {
-    let html =
+    var html =
     `<div class="chat-group-user clearfix" id="${id}">
       <p class="chat-group-user__name">${name}</p>
       <input name="group[user_ids][]" type="hidden" value="${id}">
@@ -55,7 +55,6 @@ $(function(){
       .parent()
       .remove();
     addDeleteUser(userName, userId);
-    //addMember(userId);
   });
   $(document).on("click", ".chat-group-user__btn--remove", function() {
     $(this)
