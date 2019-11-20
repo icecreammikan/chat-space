@@ -20,7 +20,7 @@
         = f.text_field :text, placeholder: 'type a message'
       .input-box__image
         = f.label :image, class:'icon' do
-          = fa_icon('image', class: 'image-icon')
+          = icon('fas', 'image', class: 'image-icon')
           = f.file_field :image, class: 'hidden'
       .send-btn
         = f.submit 'Send', class: 'form__submit', id:'form_send'
