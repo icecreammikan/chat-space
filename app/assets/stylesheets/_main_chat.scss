@@ -52,8 +52,16 @@
       padding-bottom: 40px;
       
       &__upper-info {
-        display: flex;
         margin-bottom: 10px;
+        display: flex;
+        font-weight: bold;
+      }
+      .message__upper-date {
+        font-size: 10px;
+        padding-left: 10px;
+        color: gray;
+        text-align: center;
+        margin-top: 5px;
       }
       &__text {
         color: #434a54;

@@ -1,8 +1,8 @@
 .message{data: {message:{id: message.id}}}
   .message__upper-info
     = message.user.name
-  .message__upper-date
-    = message.created_at.strftime("%Y/%m/%d %H:%M")
+    .message__upper-date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
   .lower-message__text
     - if message.text.present?
       %p.lower-message__text

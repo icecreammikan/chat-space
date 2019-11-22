@@ -5,6 +5,9 @@ $(function(){
       `<div class="message", data-message-id=${message.id}>
         <div class="message__upper-info">
         ${message.user_name}
+          <div class="message__upper-date">
+          ${message.created_at}
+          </div>
         </div>
         <div class="message__text">
           <p class="lower-message__text">
